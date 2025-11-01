@@ -1,0 +1,79 @@
+/* Fonts loaded from Google in production; keep local fallback */
+:root{
+  --bg-dark:#061223;
+  --accent:#00e5ff;
+  --accent2:#ff00d4;
+  --muted: rgba(255,255,255,0.75);
+  --card-bg: rgba(255,255,255,0.02);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%; margin:0; font-family: 'Poppins', system-ui, Arial, sans-serif; background:linear-gradient(135deg,#071428,#0b2a44 60%); color:#fff;}
+
+/* header */
+.site-header{display:flex; justify-content:space-between; align-items:center; padding:12px 24px; position:sticky; top:0; z-index:50; backdrop-filter: blur(6px); background: rgba(0,0,0,0.2)}
+.brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:#fff}
+.brand-logo{width:54px; height:54px; border-radius:50%; object-fit:cover; box-shadow:0 0 18px rgba(0,229,255,0.12)}
+.main-nav{display:flex; gap:12px; align-items:center}
+.main-nav a{color:var(--muted); text-decoration:none; padding:8px 10px; border-radius:8px}
+.main-nav a:hover{color:#fff; box-shadow:0 0 18px rgba(0,229,255,0.06)}
+
+/* hero */
+.content{width:92%; max-width:1200px; margin:28px auto 60px; position:relative}
+.hero{display:grid; grid-template-columns:1fr 420px; gap:28px; align-items:center; margin-top:18px}
+.neon-title{font-size:2.2rem; margin:0 0 12px; text-shadow:0 0 18px rgba(0,229,255,0.14)}
+.lead{color:var(--muted)}
+.hero-ctas{margin-top:12px; display:flex; gap:12px}
+.btn{padding:10px 18px; border-radius:10px; text-decoration:none; display:inline-block; font-weight:700; cursor:pointer}
+.btn.neon{background:linear-gradient(90deg,var(--accent),var(--accent2)); color:#0b0b0b; box-shadow:0 8px 40px rgba(0,229,255,0.08)}
+.btn.outline{background:transparent; border:1px solid rgba(255,255,255,0.06); color:var(--muted)}
+.impact{display:flex; gap:18px; margin-top:18px}
+.impact div{background:var(--card-bg); padding:10px 14px; border-radius:10px; text-align:center}
+
+/* hero right */
+.hero-right{display:flex; flex-direction:column; align-items:center; gap:12px}
+.auto-image{width:320px; border-radius:14px; box-shadow:0 20px 40px rgba(0,0,0,0.6)}
+lottie-player{width:320px; height:320px}
+
+/* panels */
+.panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:28px; border-radius:12px; margin:18px 0; box-shadow:0 10px 40px rgba(0,0,0,0.45)}
+.features-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px}
+.feature-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:18px; border-radius:12px; text-align:center; box-shadow:0 8px 30px rgba(0,0,0,0.45)}
+.feature-card i{font-size:28px; color:var(--accent); margin-bottom:8px}
+
+/* gallery */
+.gallery-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:10px}
+.gallery-grid img{width:100%; height:150px; object-fit:cover; border-radius:8px}
+
+/* auth */
+.auth-wrap{display:flex; align-items:center; justify-content:center; height:70vh}
+.auth-card{width:360px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:20px; border-radius:12px; box-shadow:0 12px 40px rgba(0,0,0,0.5)}
+.auth-card input, .auth-card select{width:100%; padding:10px; margin:8px 0; border-radius:8px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:#fff}
+.error{color:#ff8b8b}
+
+/* feedback page */
+.feedback-page{max-width:600px; margin:24px auto; padding:18px}
+.feedback-page input, .feedback-page textarea, .feedback-page select{width:100%; padding:10px; margin:8px 0; border-radius:8px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:#fff}
+
+/* footer */
+.site-footer{margin-top:36px; padding:22px; background:linear-gradient(90deg, rgba(0,229,255,0.06), rgba(255,0,212,0.04)); border-radius:8px}
+.footer-inner{display:flex; justify-content:space-between; align-items:center; gap:12px}
+.footer-brand img{width:46px; border-radius:50%}
+.footer-animated{height:8px; background:linear-gradient(90deg,var(--accent),var(--accent2)); border-radius:6px; margin-top:12px; animation:run 6s linear infinite}
+@keyframes run{0%{background-position:0%}100%{background-position:100%}}
+
+/* small screens */
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr; padding:12px}
+  .hero-right{display:flex; flex-direction:row; gap:12px; justify-content:center}
+  .brand-logo{width:46px}
+  .header-left{flex:1}
+}  
+@media (max-width:500px){
+  .auto-image, lottie-player{width:240px; height:240px}
+} 
+
+
+
+
+

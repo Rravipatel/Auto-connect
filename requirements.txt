@@ -1,0 +1,7 @@
+Flask
+Flask-Cors
+Flask-Compress
+requests
+gunicorn
+geopy
+

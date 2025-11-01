@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sign Up - Axis AutoConnect</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <div class="auth-wrap" data-aos="zoom-in">
+    <form method="POST" action="{{ url_for('signup') }}" class="auth-card">
+      <h2>Sign Up</h2>
+      {% if error %}<p class="error">{{ error }}</p>{% endif %}
+      <input name="email" type="email" placeholder="Email (college preferred)" required>
+      <input name="password" type="password" placeholder="Create password" required>
+      <select name="role" required>
+        <option value="student">Student</option>
+        <option value="driver">Driver</option>
+      </select>
+      <button class="btn neon">Create account</button>
+      <p class="muted">Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+    </form>
+  </div>
+</body>
+</html>

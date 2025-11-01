@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Axis AutoConnect</title>
+  <meta name="description" content="Axis AutoConnect — Connect Axis College students with local auto drivers for safe, fast commutes."/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <!-- icons & AOS & Lottie -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-left">
+      <a href="https://axiscolleges.org/" target="_blank" class="brand">
+        <img class="brand-logo" src="https://yt3.googleusercontent.com/75u3CQlxznKsipQB8-fmXMAbzGt7qi-Qlxlm0_k9c1fe72VmrWyMA5qu8ySo_u3cq5SlVMt9FA=s900-c-k-c0x00ffffff-no-rj" alt="Axis Logo">
+        <span>Axis AutoConnect</span>
+      </a>
+    </div>
+    <nav class="main-nav">
+      {% if user %}
+        <span class="nav-welcome">Hi, {{ user }}</span>
+        <a href="{{ url_for('logout') }}">Logout</a>
+      {% else %}
+        <a href="{{ url_for('login') }}"><i class="fas fa-sign-in-alt"></i> Login</a>
+        <a href="{{ url_for('signup') }}"><i class="fas fa-user-plus"></i> Sign up</a>
+      {% endif %}
+      <a href="{{ url_for('developer') }}">Developer</a>
+      <a href="{{ url_for('feedback') }}">Feedback</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <!-- HERO -->
+    <section class="hero" data-aos="fade-up">
+      <div class="hero-left">
+        <h1 class="neon-title">Connecting Students & Auto Drivers</h1>
+        <p class="lead">Safe. Fast. Verified. Serving Axis Knowledge City, Rooma, Kanpur.</p>
+        <div class="hero-ctas">
+          <a class="btn neon" href="{{ url_for('signup') }}">Get Started</a>
+          <a class="btn outline" href="#features">Learn More</a>
+        </div>
+
+        <div class="impact">
+          <div><strong id="cnt-users">500+</strong><span>students</span></div>
+          <div><strong id="cnt-drivers">40+</strong><span>drivers</span></div>
+          <div><strong id="cnt-rides">3000+</strong><span>rides</span></div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <!-- Lottie animation (girl) -->
+        <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_tfb3estd.json"
+                       background="transparent" speed="1" style="width:360px; height:360px;" loop autoplay></lottie-player>
+        <!-- Auto image -->
+        <img class="auto-image" src="https://www.thestatesman.com/wp-content/uploads/2022/07/auto.jpg" alt="Auto rickshaw">
+      </div>
+    </section>
+
+    <!-- MISSION -->
+    <section id="mission" class="panel" data-aos="fade-right">
+      <h2>Our Mission</h2>
+      <p>To revolutionize everyday campus commutes by providing a verified, reliable and tech-driven way for Axis students to find nearby auto drivers. Built by Axis students for Axis students.</p>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="panel" data-aos="fade-left">
+      <h2>Smart Features</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class="fas fa-map-marker-alt"></i>
+          <h3>Real-time Matching</h3>
+          <p>Nearest driver matched instantly using location.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-user-check"></i>
+          <h3>Verified Users</h3>
+          <p>College-based signups to keep the community safe.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-route"></i>
+          <h3>Optimized Routes</h3>
+          <p>Planned routes save time and reduce wait periods.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- UPCOMING AI -->
+    <section id="ai" class="panel" data-aos="fade-up">
+      <h2>Upcoming AI Features</h2>
+      <ul class="ai-list" id="ai-list">
+        <li>AI-powered ride scheduling</li>
+        <li>Voice booking assistant</li>
+        <li>Predictive wait time analytics</li>
+        <li>Driver heatmaps</li>
+      </ul>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="panel" data-aos="zoom-in">
+      <h2>Gallery</h2>
+      <div class="gallery-grid">
+        <img loading="lazy" src="https://axiscolleges.wordpress.com/wp-content/uploads/2024/06/axis-colleges-1.jpg?w=595" alt="auto 1">
+        <img loading="lazy" src="https://assets.thehansindia.com/h-upload/feeds/2019/07/01/191488-1.jpg" alt="auto 2">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80" alt="students">
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="https://yt3.googleusercontent.com/75u3CQlxznKsipQB8-fmXMAbzGt7qi-Qlxlm0_k9c1fe72VmrWyMA5qu8ySo_u3cq5SlVMt9FA=s900-c-k-c0x00ffffff-no-rj" alt="Axis Logo">
+        <p>Axis AutoConnect — Student initiative</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://axiscolleges.org/" target="_blank">Axis Colleges</a>
+        <a href="{{ url_for('developer') }}">Developer</a>
+        <a href="{{ url_for('feedback') }}">Feedback</a>
+      </div>
+    </div>
+    <div class="footer-animated">&nbsp;</div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 900, once: true });
+  </script>
+  <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
+
+
+
+
+

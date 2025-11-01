@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Feedback - Axis AutoConnect</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <main class="feedback-page" data-aos="fade-up">
+    <h2>Send Feedback</h2>
+    <form id="feedbackForm" method="POST" action="{{ url_for('feedback') }}">
+      <input name="name" type="text" placeholder="Name" required>
+      <input name="email" type="email" placeholder="Email (optional)">
+      <select name="role">
+        <option value="student">Student</option>
+        <option value="driver">Driver</option>
+        <option value="other">Other</option>
+      </select>
+      <textarea name="message" placeholder="Your feedback" required></textarea>
+      <select name="rating">
+        <option value="5">5 ★</option><option value="4">4 ★</option><option value="3">3 ★</option>
+        <option value="2">2 ★</option><option value="1">1 ★</option>
+      </select>
+      <button type="submit" class="btn neon">Submit</button>
+    </form>
+  </main>
+  <script>
+    // the form does POST and returns JSON if using AJAX; server will handle normal POST redirect
+  </script>
+</body>
+</html>
+
+
